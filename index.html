@@ -189,7 +189,21 @@
       margin-bottom: 1.5rem;
       box-shadow: 0 4px 20px rgba(0,161,224,0.2);
     }
-    .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 1rem; }
+    .about-text p { color: var(--muted); margin-bottom: 1.1rem; font-size: 1rem; line-height: 1.75; }
+    .about-text p:first-of-type { font-size: 1.05rem; color: var(--dark); font-weight: 500; }
+    .about-highlights {
+      display: flex; flex-direction: column; gap: 0.7rem;
+      margin: 1.5rem 0;
+    }
+    .about-highlight {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      background: var(--bg); border-radius: 10px;
+      padding: 0.75rem 1rem;
+      border-left: 3px solid var(--blue);
+    }
+    .about-highlight-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .about-highlight-text { font-size: 0.9rem; color: var(--dark); font-weight: 500; line-height: 1.45; }
+    .about-highlight-text span { color: var(--blue); font-weight: 700; }
     .about-details { background: var(--bg); border-radius: var(--radius); padding: 1.5rem; }
     .detail-row { display: flex; gap: 1rem; margin-bottom: 0.9rem; align-items: flex-start; }
     .detail-row:last-child { margin-bottom: 0; }
@@ -498,9 +512,28 @@
     <div class="about-grid">
       <div class="about-text">
         <img src="sunny.jpeg" alt="Sunny Kumar Sharma" class="about-photo" />
-        <p>I'm a Salesforce Technical Team Lead with over 5 years of experience delivering enterprise-grade solutions across Data Cloud, Agentforce, Service Cloud, and Experience Cloud.</p>
-        <p>Currently leading a swarm team at Salesforce, I specialise in helping customers unlock the full potential of the Salesforce platform — from technical architecture to hands-on implementation and mentoring engineers.</p>
-        <p>I hold 11 Salesforce certifications including PD2, AI Specialist, Data Cloud Consultant, and Service Cloud Consultant, and am a proud Trailhead Four Star Ranger.</p>
+        <p>I'm a Salesforce Technical Team Lead and AI enthusiast with over <strong>5 years of experience</strong> building enterprise-grade solutions that sit at the intersection of CRM, AI, and intelligent automation.</p>
+        <p>Currently leading a Swarm team at Salesforce, I work closely with customers and product engineers to architect and deliver transformative solutions across <strong>Data Cloud, Agentforce, Service Cloud Voice,</strong> and <strong>Experience Cloud</strong> — turning complex platform capabilities into real business outcomes.</p>
+        <p>My journey spans the full spectrum of the Salesforce ecosystem — from writing Apex and Lightning Web Components to designing AI-driven agentic workflows with Agentforce and RAG. I'm passionate about mentoring engineers, publishing technical insights, and staying at the cutting edge of Salesforce innovation.</p>
+
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <div class="about-highlight-icon">🏅</div>
+            <div class="about-highlight-text"><span>11× Salesforce Certified</span> — including PD2, AI Specialist, Data Cloud Consultant &amp; Agentforce Specialist</div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">🤖</div>
+            <div class="about-highlight-text"><span>Agentblazer Legend '26</span> — highest status in the Salesforce Agentblazer Community</div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">⭐</div>
+            <div class="about-highlight-text"><span>Trailhead Four Star Ranger</span> — committed to continuous learning on the Salesforce platform</div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">✍️</div>
+            <div class="about-highlight-text"><span>Author &amp; Thought Leader</span> — published 5 technical articles on Agentforce, Data Cloud, and Service Cloud Voice</div>
+          </div>
+        </div>
       </div>
       <div class="about-details">
         <div class="detail-row">
