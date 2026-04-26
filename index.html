@@ -31,7 +31,7 @@
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(15, 29, 43, 0.95);
+      background: rgba(15, 29, 43, 0.97);
       backdrop-filter: blur(10px);
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 5%;
@@ -41,6 +41,50 @@
     nav ul { list-style: none; display: flex; gap: 2rem; }
     nav ul a { color: #c8d8e8; text-decoration: none; font-size: 0.9rem; transition: color .2s; }
     nav ul a:hover { color: var(--blue); }
+
+    /* hamburger button */
+    .nav-toggle {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 4px; z-index: 200;
+    }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: #c8d8e8; border-radius: 2px;
+      transition: all .3s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* mobile drawer */
+    .nav-drawer {
+      display: none;
+      position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
+      background: rgba(15, 29, 43, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem 5% 2rem;
+      flex-direction: column; gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: all .25s;
+    }
+    .nav-drawer.open {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .nav-drawer a {
+      color: #c8d8e8; text-decoration: none;
+      font-size: 1rem; font-weight: 500;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color .2s;
+    }
+    .nav-drawer a:last-child { border-bottom: none; }
+    .nav-drawer a:hover { color: var(--blue); }
 
     /* ── HERO ── */
     #hero {
@@ -343,15 +387,21 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 820px) {
-      .hero-content { flex-direction: column; text-align: center; }
+      .hero-content { flex-direction: column; text-align: center; gap: 2rem; }
       .hero-tagline { justify-content: center; }
       .hero-btns { justify-content: center; }
       .stats-bar { justify-content: center; }
       .hero-photo { width: 150px; height: 150px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+      .certs-grid { grid-template-columns: 1fr; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 5%; }
     }
     @media (max-width: 700px) {
       nav ul { display: none; }
-      .about-grid { grid-template-columns: 1fr; }
+      .nav-toggle { display: flex; }
     }
   </style>
 </head>
@@ -368,7 +418,20 @@
     <li><a href="#articles">Articles</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#about" onclick="closeDrawer()">About</a>
+  <a href="#skills" onclick="closeDrawer()">Skills</a>
+  <a href="#experience" onclick="closeDrawer()">Experience</a>
+  <a href="#certifications" onclick="closeDrawer()">Certifications</a>
+  <a href="#articles" onclick="closeDrawer()">Articles</a>
+  <a href="#contact" onclick="closeDrawer()">Contact</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -814,5 +877,26 @@
   <p>© 2026 Sunny Kumar Sharma &nbsp;·&nbsp; Built with ❤️</p>
 </footer>
 
+<script>
+  const toggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('navDrawer');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+  });
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    toggle.classList.remove('open');
+  }
+
+  // close drawer when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!toggle.contains(e.target) && !drawer.contains(e.target)) {
+      closeDrawer();
+    }
+  });
+</script>
 </body>
 </html>
