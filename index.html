@@ -337,22 +337,28 @@
     .article-card {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 1.6rem;
       border: 1.5px solid #e8eef5;
       box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      display: flex; flex-direction: column; gap: 0.8rem;
+      display: flex; flex-direction: column;
       transition: all .25s;
       text-decoration: none; color: inherit;
+      overflow: hidden;
     }
     .article-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,161,224,0.12); }
+    .article-cover {
+      width: 100%; height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-body { padding: 1.2rem 1.4rem 1.4rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
     .article-tag {
       display: inline-block; width: fit-content;
       background: rgba(0,161,224,0.1); color: var(--blue);
       font-size: 0.72rem; font-weight: 700; letter-spacing: 1px;
       text-transform: uppercase; padding: 3px 12px; border-radius: 999px;
     }
-    .article-title { font-size: 1rem; font-weight: 700; color: var(--dark); line-height: 1.4; }
-    .article-excerpt { font-size: 0.85rem; color: var(--muted); line-height: 1.55; flex: 1; }
+    .article-title { font-size: 0.97rem; font-weight: 700; color: var(--dark); line-height: 1.4; }
+    .article-excerpt { font-size: 0.84rem; color: var(--muted); line-height: 1.55; flex: 1; }
     .article-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 0.8rem; border-top: 1px solid #eef2f7; }
     .article-date { font-size: 0.78rem; color: #8a9ab0; }
     .article-read { font-size: 0.78rem; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 4px; }
@@ -786,53 +792,68 @@
     </div>
     <div class="articles-grid">
 
-      <a class="article-card" href="https://www.linkedin.com/pulse/service-cloud-voice-redefining-phone-support-sunny-kumar-sharma-7yvic/" target="_blank" rel="noopener">
-        <span class="article-tag">Service Cloud</span>
-        <div class="article-title">Service Cloud Voice: Redefining Phone Support in Salesforce</div>
-        <div class="article-excerpt">Explores how Service Cloud Voice integrates telephony directly into the Service Cloud Console, unifying voice with CRM data and Einstein AI to streamline agent workflows and enable true omnichannel service.</div>
-        <div class="article-footer">
-          <span class="article-date">Jan 2, 2026</span>
-          <span class="article-read">Read on LinkedIn →</span>
-        </div>
-      </a>
-
-      <a class="article-card" href="https://www.linkedin.com/pulse/unlocking-intelligent-automation-salesforce-sunny-kumar-sharma-otmrc/" target="_blank" rel="noopener">
-        <span class="article-tag">Agentforce</span>
-        <div class="article-title">Unlocking Intelligent Automation with Salesforce Agentforce</div>
-        <div class="article-excerpt">Deep dive into Salesforce Agentforce — an enterprise AI platform that builds autonomous agents capable of resolving tickets, qualifying leads, and handling workflows 24/7 across voice, chat, email, and Slack.</div>
-        <div class="article-footer">
-          <span class="article-date">Jan 12, 2026</span>
-          <span class="article-read">Read on LinkedIn →</span>
-        </div>
-      </a>
-
-      <a class="article-card" href="https://www.linkedin.com/pulse/whats-new-service-cloud-voice-key-enhancements-spring-kumar-sharma-ninnc/" target="_blank" rel="noopener">
-        <span class="article-tag">Spring '26</span>
-        <div class="article-title">What's New in Service Cloud Voice: Key Enhancements in Spring '26</div>
-        <div class="article-excerpt">Covers 10 major Spring '26 enhancements including Flow-based routing, queued callbacks, voicemail drop, enhanced VoiceCall object with 300 custom fields, and Amazon Connect v20.0 upgrades.</div>
-        <div class="article-footer">
-          <span class="article-date">Jan 16, 2026</span>
-          <span class="article-read">Read on LinkedIn →</span>
+      <a class="article-card" href="https://www.linkedin.com/pulse/unlocking-business-value-salesforce-data-360formerly-kumar-sharma-sksqf/" target="_blank" rel="noopener">
+        <img class="article-cover" src="https://media.licdn.com/dms/image/v2/D4D12AQGwGQvpbmSfzA/article-cover_image-shrink_600_2000/B4DZwXTNdcHMAQ-/0/1769917442338?e=2147483647&v=beta&t=zDIIdCh_Qli99Zt5azXCoUlXqaGoDHY58jeFOBzzXOc" alt="Salesforce Data 360" loading="lazy" />
+        <div class="article-body">
+          <span class="article-tag">Data 360</span>
+          <div class="article-title">Unlocking Business Value with Salesforce Data 360 (Formerly Data Cloud)</div>
+          <div class="article-excerpt">Breaks down how Data 360's connect-harmonize-activate model unifies fragmented enterprise data into real-time unified customer profiles, powering personalization, automation, and predictive AI.</div>
+          <div class="article-footer">
+            <span class="article-date">Feb 1, 2026</span>
+            <span class="article-read">Read on LinkedIn →</span>
+          </div>
         </div>
       </a>
 
       <a class="article-card" href="https://www.linkedin.com/pulse/reimagining-ai-business-salesforce-agentforce-rag-sunny-kumar-sharma-nnjtc/" target="_blank" rel="noopener">
-        <span class="article-tag">AI / RAG</span>
-        <div class="article-title">Reimagining AI in Business with Salesforce Agentforce &amp; RAG</div>
-        <div class="article-excerpt">Examines how Retrieval-Augmented Generation combined with Agentforce enables intelligent agents grounded in real business data — with 10 implementation best practices to reduce hallucinations and scale enterprise AI.</div>
-        <div class="article-footer">
-          <span class="article-date">Jan 18, 2026</span>
-          <span class="article-read">Read on LinkedIn →</span>
+        <img class="article-cover" src="https://media.licdn.com/dms/image/v2/D5612AQFI3nW2MzC1jQ/article-cover_image-shrink_720_1280/B56ZvQijwBJ0AI-/0/1768730282524?e=2147483647&v=beta&t=dTx1XsqQCaDOS_YYq7E3rV_P8SujKKCRtmfrxTLuKS8" alt="Agentforce RAG" loading="lazy" />
+        <div class="article-body">
+          <span class="article-tag">AI / RAG</span>
+          <div class="article-title">Reimagining AI in Business with Salesforce Agentforce &amp; RAG</div>
+          <div class="article-excerpt">Examines how Retrieval-Augmented Generation combined with Agentforce enables intelligent agents grounded in real business data — with 10 implementation best practices to reduce hallucinations and scale enterprise AI.</div>
+          <div class="article-footer">
+            <span class="article-date">Jan 18, 2026</span>
+            <span class="article-read">Read on LinkedIn →</span>
+          </div>
         </div>
       </a>
 
-      <a class="article-card" href="https://www.linkedin.com/pulse/unlocking-business-value-salesforce-data-360formerly-kumar-sharma-sksqf/" target="_blank" rel="noopener">
-        <span class="article-tag">Data 360</span>
-        <div class="article-title">Unlocking Business Value with Salesforce Data 360 (Formerly Data Cloud)</div>
-        <div class="article-excerpt">Breaks down how Data 360's connect-harmonize-activate model unifies fragmented enterprise data into real-time unified customer profiles, powering personalization, automation, and predictive AI across industries.</div>
-        <div class="article-footer">
-          <span class="article-date">Feb 1, 2026</span>
-          <span class="article-read">Read on LinkedIn →</span>
+      <a class="article-card" href="https://www.linkedin.com/pulse/whats-new-service-cloud-voice-key-enhancements-spring-kumar-sharma-ninnc/" target="_blank" rel="noopener">
+        <img class="article-cover" src="https://media.licdn.com/dms/image/v2/D5612AQGgTai_4n4b7Q/article-cover_image-shrink_600_2000/B56ZvI.AY4JAAU-/0/1768603260602?e=2147483647&v=beta&t=E0fLUqrISrwekOZxXf7Zf56tbjun-6MRv_nNTzNgZWQ" alt="Service Cloud Voice Spring 26" loading="lazy" />
+        <div class="article-body">
+          <span class="article-tag">Spring '26</span>
+          <div class="article-title">What's New in Service Cloud Voice: Key Enhancements in Spring '26</div>
+          <div class="article-excerpt">Covers 10 major Spring '26 enhancements including Flow-based routing, queued callbacks, voicemail drop, enhanced VoiceCall object with 300 custom fields, and Amazon Connect v20.0 upgrades.</div>
+          <div class="article-footer">
+            <span class="article-date">Jan 16, 2026</span>
+            <span class="article-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="article-card" href="https://www.linkedin.com/pulse/unlocking-intelligent-automation-salesforce-sunny-kumar-sharma-otmrc/" target="_blank" rel="noopener">
+        <img class="article-cover" src="https://media.licdn.com/dms/image/v2/D5612AQGqhRCU5qEL_A/article-cover_image-shrink_600_2000/B56Zuv4uD3IsAQ-/0/1768182444495?e=2147483647&v=beta&t=6wL-3h6nAwEEtoEDxzLZTaR97M3_-oJRlXrFjquHqpk" alt="Salesforce Agentforce" loading="lazy" />
+        <div class="article-body">
+          <span class="article-tag">Agentforce</span>
+          <div class="article-title">Unlocking Intelligent Automation with Salesforce Agentforce</div>
+          <div class="article-excerpt">Deep dive into Salesforce Agentforce — an enterprise AI platform that builds autonomous agents capable of resolving tickets, qualifying leads, and handling workflows 24/7 across voice, chat, email, and Slack.</div>
+          <div class="article-footer">
+            <span class="article-date">Jan 12, 2026</span>
+            <span class="article-read">Read on LinkedIn →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="article-card" href="https://www.linkedin.com/pulse/service-cloud-voice-redefining-phone-support-sunny-kumar-sharma-7yvic/" target="_blank" rel="noopener">
+        <img class="article-cover" src="https://media.licdn.com/dms/image/v2/D5612AQGvU-2PwJf1WA/article-cover_image-shrink_720_1280/B56ZuAcMZuJMAQ-/0/1767386443056?e=2147483647&v=beta&t=SU0vHBhYzDhRyKvvsJBmuHdruTzNLYpcw2j5vDqbpIY" alt="Service Cloud Voice" loading="lazy" />
+        <div class="article-body">
+          <span class="article-tag">Service Cloud</span>
+          <div class="article-title">Service Cloud Voice: Redefining Phone Support in Salesforce</div>
+          <div class="article-excerpt">Explores how Service Cloud Voice integrates telephony directly into the Service Cloud Console, unifying voice with CRM data and Einstein AI to streamline agent workflows and enable true omnichannel service.</div>
+          <div class="article-footer">
+            <span class="article-date">Jan 2, 2026</span>
+            <span class="article-read">Read on LinkedIn →</span>
+          </div>
         </div>
       </a>
 
